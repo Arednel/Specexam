@@ -18,7 +18,7 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-    <title>{{ __('Экзамен для абитуриентов') }}</title>
+    <title>{{ __('Собеседование для абитуриентов') }}</title>
 </head>
 
 <body>
@@ -42,7 +42,7 @@
 
             <div class="testing-main">
                 <div class="testing-main__head testing__head">
-                    <p>{{ __('Экзамен для абитуриентов, поступающих на педагогические специальности') }} </p>
+                    <p>{{ __('Собеседование для абитуриентов, поступающих на платной основе') }} </p>
                 </div>
 
                 <div class="testing-main__content">
