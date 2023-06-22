@@ -110,6 +110,49 @@
             </div>
 
             <div class="form-item">
+                <label class="form-item__title">{{ __('Образовательное учреждение') }}</label>
+                <div class="form-item__input">
+                    <select name="educational_institution" id="educational_institution"
+                        class="educational-institution-select" required>
+                        <optgroup label="{{ __('Бакалавриат') }}">
+                        <optgroup label="&nbsp&nbsp&nbsp&nbsp{{ __('Школа') }}">
+                            <option value="Бакалавриат - Школа - Иностранный гражданин">
+                                {{ __('Иностранный гражданин') }}</option>
+                            <option value="Бакалавриат - Школа - После армии">{{ __('После армии') }}</option>
+                        </optgroup>
+                        <optgroup label="&nbsp&nbsp&nbsp&nbsp{{ __('Колледж') }}">
+                            <option value="Бакалавриат - Колледж - Иностранный гражданин">
+                                {{ __('Иностранный гражданин') }}</option>
+                            <option value="Бакалавриат - Колледж - Гражданин РК">{{ __('Гражданин РК') }}</option>
+                            <option value="Бакалавриат - Колледж - После армии">{{ __('После армии') }}</option>
+                        </optgroup>
+                        <optgroup label="&nbsp&nbsp&nbsp&nbsp{{ __('ВУЗ') }}">
+                            <option value="Бакалавриат - ВУЗ - Иностранный гражданин">{{ __('Иностранный гражданин') }}
+                            </option>
+                            <option value="Бакалавриат - ВУЗ - Гражданин РК">{{ __('Гражданин РК') }}</option>
+                            <option value="Бакалавриат - ВУЗ - После армии">{{ __('После армии') }}</option>
+                        </optgroup>
+                        </optgroup>
+
+                        <optgroup label="{{ __('Магистратура') }}">
+                        <optgroup label="&nbsp&nbsp&nbsp&nbsp{{ __('ВУЗ') }}">
+                            <option value="Магистратура - ВУЗ - Иностранный гражданин">
+                                {{ __('Иностранный гражданин') }}</option>
+                            <option value="Магистратура - ВУЗ - После армии">{{ __('После армии') }}</option>
+                        </optgroup>
+                        </optgroup>
+                    </select>
+                </div>
+                @error('educational_institution')
+                    <div class="form-item__error show">
+                        <p>{{ $message }}</p>
+                    </div>
+                @else
+                    <div class="form-item__error"></div>
+                @enderror
+            </div>
+
+            <div class="form-item">
                 <label class="form-item__title">{{ __('Специальность') }}</label>
                 <div class="form-item__input">
                     <select class="js-choice" name="speciality" id="speciality" required>
@@ -123,7 +166,8 @@
                             {{ __('Подготовка учителей основы права и экономики') }}</option>
                         <option value="В009 Подготовка учителей математики">{{ __('Подготовка учителей математики') }}
                         </option>
-                        <option value="В010 Подготовка учителей физики">{{ __('Подготовка учителей физики') }}</option>
+                        <option value="В010 Подготовка учителей физики">{{ __('Подготовка учителей физики') }}
+                        </option>
                         <option value="В011 Подготовка учителей информатики">
                             {{ __('Подготовка учителей информатики') }}</option>
                         <option value="В012 Подготовка учителей химии">{{ __('Подготовка учителей химии') }}</option>
@@ -146,27 +190,6 @@
                 </div>
 
                 @error('speciality')
-                    <div class="form-item__error show">
-                        <p>{{ $message }}</p>
-                    </div>
-                @else
-                    <div class="form-item__error"></div>
-                @enderror
-            </div>
-
-            <div class="form-item">
-                <label class="form-item__title">{{ __('Образовательное учреждение') }}</label>
-                <div class="form-item__input">
-                    <select class="js-choice" name="educational_institution" id="educational_institution" required>
-                        <option value="" disabled>
-                            {{ __('Укажите своё последнее оконченное образовательное учреждение') }}
-                        </option>
-                        <option value="Школа">{{ __('Школа') }}</option>
-                        <option value="Колледж">{{ __('Колледж') }}</option>
-                    </select>
-                </div>
-
-                @error('educational_institution')
                     <div class="form-item__error show">
                         <p>{{ $message }}</p>
                     </div>
@@ -210,11 +233,6 @@
 <script>
     const choices_speciality = new Choices('#speciality', {
         searchEnabled: true,
-        itemSelectText: '',
-    })
-
-    const choices_educational_institution = new Choices('#educational_institution', {
-        searchEnabled: false,
         itemSelectText: '',
     })
 

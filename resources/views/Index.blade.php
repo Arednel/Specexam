@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/info.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
 
-    <title>Pedexam</title>
+    <title>Specexam</title>
 </head>
 
 <body>
