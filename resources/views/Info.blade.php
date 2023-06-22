@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 1.0.3.7 / 2023.06.22</p>
-    <p>Specexam start</p>
+    <p>version 1.0.3.8 / 2023.06.22</p>
+    <p>Index page</p>
 </body>
 
 </html>

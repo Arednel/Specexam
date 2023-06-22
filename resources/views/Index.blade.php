@@ -45,21 +45,21 @@
                         @switch(session('error'))
                             @case('exam completed')
                                 <p class="popup__text">
-                                    {{ __('Вы уже сдали специальный экзамен и получили «допуск» для поступления на педагогические специальности.') }}
+                                    {{ __('Вы уже прошли собеседование и получили «допуск» для поступления на педагогические специальности.') }}
                                 </p>
                                 <p class="popup__time">&nbsp;</p>
                             @break
 
                             @case('try later')
                                 <p class="popup__text">
-                                    {{ __('Вы уже прошли специальный экзамен сегодня и получили «недопуск». Вы можете повторно пройти экзамен через') }}
+                                    {{ __('Вы уже прошли собеседование сегодня и получили «недопуск». Вы можете повторно пройти собеседование через') }}
                                 </p>
                                 <p class="popup__time">{{ session('time_left') }}</p>
                             @break
 
                             @case('exam failed')
                                 <p class="popup__text">
-                                    {{ __('Вы уже прошли специальный экзамен два раза и получили «недопуск». Вы не можете повторно пройти специальный экзамен.') }}
+                                    {{ __('Вы уже прошли собеседование два раза и получили «недопуск». Вы не можете повторно пройти собеседование.') }}
                                 </p>
                                 <p class="popup__time">&nbsp;</p>
                             @break
@@ -77,20 +77,17 @@
                     {{ __('Добро пожаловать в') }}
                     <span><img src="{{ asset('img/icons/1.svg') }}" alt="icon"></span><br>
                     <span><img src="{{ asset('img/icons/2.svg') }}" alt="icon"></span>
-                    {{ __('в университет, где') }}
+                    {{ __('Abai University') }}
                     <span><img src="{{ asset('img/icons/3.svg') }}" alt="icon"></span>
-                    <br> {{ __('мечты') }}
-                    <span><img src="{{ asset('img/icons/4.svg') }}" alt="icon"></span> {{ __('становятся') }} <br>
-                    <span><img src="{{ asset('img/icons/5.svg') }}" alt="icon"></span> {{ __('реальностью!') }}
                 </p>
 
                 @if (auth()->user())
                     <button class="blue-btn intro__btn" onclick="location.href='/Login'">
-                        {{ __('ПРОЙТИ ТЕСТ') }}
+                        {{ __('ПРОЙТИ СОБЕСЕДОВАНИЕ') }}
                     </button>
                 @else
                     <button class="blue-btn intro__btn" onclick="location.href='/Register'">
-                        {{ __('ПРОЙТИ ТЕСТ') }}
+                        {{ __('ПРОЙТИ СОБЕСЕДОВАНИЕ') }}
                     </button>
                 @endif
             </div>
@@ -160,11 +157,11 @@
 
         @if (auth()->user())
             <button class="blue-btn info-btn" onclick="location.href='/Login'">
-                {{ __('ПРОЙТИ ТЕСТ') }}
+                {{ __('ПРОЙТИ СОБЕСЕДОВАНИЕ') }}
             </button>
         @else
             <button class="blue-btn info-btn" onclick="location.href='/Register'">
-                {{ __('ПРОЙТИ ТЕСТ') }}
+                {{ __('ПРОЙТИ СОБЕСЕДОВАНИЕ') }}
             </button>
         @endif
     </main>
