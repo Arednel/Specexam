@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 
 use Barryvdh\DomPDF\Facade\Pdf;
 
@@ -30,7 +31,15 @@ class ExamController extends Controller
             foreach ($results as $result) {
                 //If user passed exam successfully (10 (> 9) is score needed)
                 if ($result->score > 9) {
-                    return redirect('/')->with('error', 'exam completed');
+                    $resultIDs = Result::where('user_id', $user_id)
+                        ->where('score', $result->score)
+                        ->select('id', 'user_id')
+                        ->first();
+
+                    //Create link to PDF result
+                    $PDF_link = URL::to('/PDFResult/' . $resultIDs->id . '/' . $resultIDs->user_id);
+
+                    return redirect('/')->with('error', 'exam completed')->with('PDF_link', $PDF_link);
                 }
             }
 

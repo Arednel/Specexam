@@ -46,6 +46,8 @@
                             @case('exam completed')
                                 <p class="popup__text">
                                     {{ __('Вы уже прошли собеседование и получили «допуск» для поступления на педагогические специальности.') }}
+                                    <br>
+                                    <a href="{{ session('PDF_link') }}">{{ __('Перейти к сертификату') }}</a>
                                 </p>
                                 <p class="popup__time">&nbsp;</p>
                             @break
@@ -82,9 +84,15 @@
                 </p>
 
                 @if (auth()->user())
-                    <button class="blue-btn intro__btn" onclick="location.href='/Login'">
-                        {{ __('ПРОЙТИ СОБЕСЕДОВАНИЕ') }}
-                    </button>
+                    @if (session()->has('error'))
+                        <button class="blue-btn intro__btn" onclick="location.href='{{ session('PDF_link') }}'">
+                            {{ __('ПЕРЕЙТИ К СЕРТИФИКАТУ') }}
+                        </button>
+                    @else
+                        <button class="blue-btn intro__btn" onclick="location.href='/Login'">
+                            {{ __('ПРОЙТИ СОБЕСЕДОВАНИЕ') }}
+                        </button>
+                    @endif
                 @else
                     <button class="blue-btn intro__btn" onclick="location.href='/Register'">
                         {{ __('ПРОЙТИ СОБЕСЕДОВАНИЕ') }}
