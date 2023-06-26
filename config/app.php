@@ -120,9 +120,9 @@ return [
     */
 
     'available_locales' => [
-        'English' => 'en',
         'Russian' => 'ru',
         'Kazakh' => 'kk',
+        'English' => 'en',
     ],
 
     /*

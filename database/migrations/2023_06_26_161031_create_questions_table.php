@@ -17,6 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->id();
             $table->text('text_ru');
             $table->text('text_kk');
+            $table->text('text_en');
             $table->tinyInteger('yes_is_valid_answer');
         });
     }

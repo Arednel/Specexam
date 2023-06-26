@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 1.0.4.2 / 2023.06.23</p>
-    <p>Result link, if test completed</p>
+    <p>version 1.0.5 / 2023.06.26</p>
+    <p>Eglish language</p>
 </body>
 
 </html>

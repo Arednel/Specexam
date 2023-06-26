@@ -115,18 +115,18 @@
                     <select name="educational_institution" id="educational_institution"
                         class="educational-institution-select" required>
                         <optgroup label="{{ __('Бакалавриат') }}">
-                        <optgroup label="&nbsp&nbsp&nbsp&nbsp{{ __('Школа') }}">
+                        <optgroup label="&nbsp&nbsp&nbsp&nbsp {{ __('Школа') }}">
                             <option value="Бакалавриат - Школа - Иностранный гражданин">
                                 {{ __('Иностранный гражданин') }}</option>
                             <option value="Бакалавриат - Школа - После армии">{{ __('После армии') }}</option>
                         </optgroup>
-                        <optgroup label="&nbsp&nbsp&nbsp&nbsp{{ __('Колледж') }}">
+                        <optgroup label="&nbsp&nbsp&nbsp&nbsp {{ __('Колледж') }}">
                             <option value="Бакалавриат - Колледж - Иностранный гражданин">
                                 {{ __('Иностранный гражданин') }}</option>
                             <option value="Бакалавриат - Колледж - Гражданин РК">{{ __('Гражданин РК') }}</option>
                             <option value="Бакалавриат - Колледж - После армии">{{ __('После армии') }}</option>
                         </optgroup>
-                        <optgroup label="&nbsp&nbsp&nbsp&nbsp{{ __('ВУЗ') }}">
+                        <optgroup label="&nbsp&nbsp&nbsp&nbsp {{ __('ВУЗ') }}">
                             <option value="Бакалавриат - ВУЗ - Иностранный гражданин">{{ __('Иностранный гражданин') }}
                             </option>
                             <option value="Бакалавриат - ВУЗ - Гражданин РК">{{ __('Гражданин РК') }}</option>
@@ -135,7 +135,7 @@
                         </optgroup>
 
                         <optgroup label="{{ __('Магистратура') }}">
-                        <optgroup label="&nbsp&nbsp&nbsp&nbsp{{ __('ВУЗ') }}">
+                        <optgroup label="&nbsp&nbsp&nbsp&nbsp {{ __('ВУЗ') }}">
                             <option value="Магистратура - ВУЗ - Иностранный гражданин">
                                 {{ __('Иностранный гражданин') }}</option>
                             <option value="Магистратура - ВУЗ - После армии">{{ __('После армии') }}</option>
@@ -207,6 +207,7 @@
                         </option>
                         <option value="{{ __('lang_first') }}">{{ __('lang_first_text') }}</option>
                         <option value="{{ __('lang_second') }}">{{ __('lang_second_text') }}</option>
+                        <option value="{{ __('lang_third') }}">{{ __('lang_third_text') }}</option>
                     </select>
                 </div>
 

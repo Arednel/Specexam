@@ -59,4 +59,4 @@ Route::get('/Language/{locale}', function (string $locale) {
     Cookie::queue(Cookie::forever('locale', $locale));
 
     return redirect()->back();
-})->whereIn('locale', ['ru', 'kk']);
+})->whereIn('locale', ['ru', 'kk', 'en']);

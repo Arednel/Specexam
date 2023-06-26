@@ -49,6 +49,9 @@ class userController extends Controller
             case 'kk':
                 $locale = 'kk';
                 break;
+            case 'en':
+                $locale = 'en';
+                break;
             default:
                 $locale = 'ru';
                 break;

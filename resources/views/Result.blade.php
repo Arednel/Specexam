@@ -55,7 +55,7 @@
          <img src="{{ public_path('img/logo.png') }}">
      </div>
      <div class='div-center'>
-         <b>СЕРТИФИКАТ</b>
+         <b>{{ __('СЕРТИФИКАТ') }}</b>
      </div>
 
      <div class='div-center'>
@@ -63,7 +63,7 @@
      </div>
 
      <div class='div-right'>
-         от {{ $date }}г
+         {{ $date }}г
      </div>
 
      <div class='div-main-text'>
