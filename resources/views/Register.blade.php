@@ -64,7 +64,7 @@
             </div>
 
             <div class="form-item">
-                <label class="form-item__title">Password</label>
+                <label class="form-item__title">{{ __('Пароль') }}</label>
                 <div class="form-item__input">
                     <input type="password" placeholder="{{ __('Введите пароль') }}" name="password"
                         autocomplete="new-password" required>
