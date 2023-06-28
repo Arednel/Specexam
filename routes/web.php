@@ -31,7 +31,7 @@ Route::view('/Info', 'Info');
 Route::view('/info', 'Info');
 
 //Register
-Route::view('/Register', 'Register');
+Route::get('/Register', [UserController::class, 'registerView']);
 Route::post('/Register', [UserController::class, 'register']);
 
 //Login
