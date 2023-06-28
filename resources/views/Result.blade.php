@@ -63,7 +63,7 @@
      </div>
 
      <div class='div-right'>
-         {{ $date }}г
+         {{ $date }}
      </div>
 
      <div class='div-main-text'>
