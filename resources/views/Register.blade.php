@@ -156,11 +156,11 @@
                 <label class="form-item__title">{{ __('Специальность') }}</label>
                 <div class="form-item__input">
                     <select class="js-choice" name="speciality" id="speciality" required>
-                        <option value="" disabled>{{ __('Выберите специальность') }}
-                            @foreach ($specialities as $speciality)
-                        <option value="{{ $speciality->gop }} {{ $speciality->ru }}">
-                            {{ $speciality->gop }} - {{ $speciality->$locale }}
-                        </option>
+                        <option value="" disabled>{{ __('Выберите специальность') }}</option>
+                        @foreach ($specialities as $speciality)
+                            <option value="{{ $speciality->gop }} {{ $speciality->ru }}">
+                                {{ $speciality->gop }} - {{ $speciality->$locale }}
+                            </option>
                         @endforeach
                     </select>
                 </div>
