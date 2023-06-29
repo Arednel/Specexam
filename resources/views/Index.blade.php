@@ -36,7 +36,7 @@
         <div class="header__right">
             <div class="dropdown">
                 <button class="header__lang" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                    {{ __('first_lang_choose') }}
+                    {{ __('button_lang') }}
                     /
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                         class="bi bi-globe" viewBox="0 0 18 18">
