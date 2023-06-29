@@ -15,40 +15,18 @@ class ResultController extends Controller
     public function excelExport()
     {
         //Excel first row
-        $sheet = [[
-            "Отметка времени",
-            "ID",
-            "Адрес электронной почты",
-            "Баллы",
-            "ТАӘ / ФИО",
-            "ЖСН / ИИН",
-            "ТЖК / ИКТ",
-            "Мамандығы / Специальность:",
-            "Соңғы бітірген оқу орныңыздың атауын көрсетіңіз / Укажите своё последнее оконченное образовательное учреждение",
-        ]];
+        $sheet = [];
 
-        //Push questions text to the first row
-        $questions = Question::all();
-
-        $question_number = 1;
-
-        foreach ($questions as $question) {
-            $text = $question_number . '. ' . $question->text_kk . ' / ' . $question->text_ru;
-            array_push($sheet[0], $text);
-
-            $question_number++;
-        }
-
-        $results = Result::all();
+        $results = Result::all(['id', 'user_id', 'answers', 'score']);
 
         $questions_amount = Question::all()
             ->count();
 
         //Excel other rows
-        $current_row = 1;
+        $current_row = 0;
 
         foreach ($results as $result) {
-            $user = User::find($result->user_id);
+            $user = User::find($result->user_id, ['last_try', 'email', 'full_name', 'iin', 'ict', 'speciality', 'educational_institution']);
 
             array_push($sheet, [
                 $user->last_try,
@@ -86,7 +64,7 @@ class ResultController extends Controller
 
         $export = new ResultsExport([$sheet]);
 
-        $filename = 'Pedexam_' . now();
+        $filename = 'Specexam_' . now();
 
         return Excel::download($export, $filename . '.xlsx');
     }

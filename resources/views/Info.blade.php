@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 1.0.6.1 / 2023.06.28</p>
-    <p>Translation fixes</p>
+    <p>version 1.0.6.2 / 2023.06.29</p>
+    <p>Excel performance improvement</p>
 </body>
 
 </html>
