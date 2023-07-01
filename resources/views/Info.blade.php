@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 1.0.6.4 / 2023.07.01</p>
-    <p>KZ Certificate fix</p>
+    <p>version 1.0.6.4.1 / 2023.07.01</p>
+    <p>Text fix</p>
 </body>
 
 </html>
