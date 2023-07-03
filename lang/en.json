@@ -92,8 +92,11 @@
     "!View Result": "Result",
     "СЕРТИФИКАТ": "CERTIFICATE",
     "дан <i>full_name</i> в том, что он(а) в составе абитуриентов КазНПУ им.Абая сдал(а) специальный экзамен и получил(а)": "given <i>:full_name</i> in the fact that he(she) as a part of the applicants of KazNPU Abai University passed the interview and received",
+    "Ответственный секретарь приемной комиссии": "Executive Secretary of the selection committee",
+    "": "",
+    "!Controller ExamController": "ExamController",
     "<b>«допуск»</b> для поступления на платной основе.": "<b>«permission»</b> for admission on a paid basis.",
     "<b>«недопуск»</b> для поступления на платной основе.": "<b>«prohibition»</b> for admission on a paid basis.",
-    "Ответственный секретарь приемной комиссии": "Executive Secretary of the selection committee",
+    "https://www.kaznpu.kz/ru/2404/page/": "https://www.kaznpu.kz/en/2404/page/",
     "": ""
 }

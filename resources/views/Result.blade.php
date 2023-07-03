@@ -71,11 +71,7 @@
              'дан <i>full_name</i> в том, что он(а) в составе абитуриентов КазНПУ им.Абая сдал(а) специальный экзамен и получил(а)',
              ['full_name' => $full_name],
          ) !!}
-         @if ($score > 9)
-             {!! __('<b>«допуск»</b> для поступления на платной основе.') !!}
-         @else
-             {!! __('<b>«недопуск»</b> для поступления на платной основе.') !!}
-         @endif
+         {!! $pass !!}
      </div>
 
      <div class='qr-with-text'>
@@ -85,25 +81,10 @@
              </b>
          </div>
 
-         @php
-             //QrCode generation
-             $string = 'Name：Даража Исабаева
-Work：Ответственный секретарь приемной комиссии
-Company：КазНПУ имени Абая
-Phone：8 727 291 57 68
-Email：
-Address：';
-             
-             $qr = QrCode::size(120)
-                 ->encoding('UTF-8')
-                 ->generate($string);
-             
-             //To image (for PDF file)
-             $qr_image = base64_encode($qr);
-         @endphp
          <div class="column-two">
              <img src="data:image/png;base64, {{ $qr_image }} ">
          </div>
+
          <div class="column-three">
              <b>Д. Исабаева</b>
          </div>

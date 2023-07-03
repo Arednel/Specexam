@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\URL;
-
-use Barryvdh\DomPDF\Facade\Pdf;
-
 use App\Models\User;
+
 use App\Models\Result;
 use App\Models\Question;
+
+use Illuminate\Http\Request;
+
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class ExamController extends Controller
 {
@@ -207,10 +208,6 @@ class ExamController extends Controller
             ]);
 
         return redirect('PDFResult/' . $result_id . '/' . $user_id);
-
-        $pdf_result = Pdf::loadView('Result', ['score' => $score]);
-
-        return $pdf_result->stream();
     }
 
     public function PDFResult($result_id, $user_id)
@@ -226,11 +223,27 @@ class ExamController extends Controller
             $full_name = User::find($user_id, 'full_name')
                 ->full_name;
 
+            if ($result->score > 9) {
+                $pass = __('<b>«допуск»</b> для поступления на платной основе.');
+            } else {
+                $pass = __('<b>«недопуск»</b> для поступления на платной основе.');
+            }
+            //QrCode generation
+            $string = __('https://www.kaznpu.kz/ru/2404/page/');
+
+            $qr = QrCode::size(120)
+                ->encoding('UTF-8')
+                ->generate($string);
+
+            //To image (for PDF file)
+            $qr_image = base64_encode($qr);
+
             $pdf_result = Pdf::loadView('Result', [
-                'score' => $result->score,
                 'result_id' => $result_id,
                 'date' => $date,
                 'full_name' => $full_name,
+                'pass' => $pass,
+                'qr_image' => $qr_image,
             ]);
 
             return $pdf_result->stream();
