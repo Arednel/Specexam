@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 1.0.7.1 / 2023.07.03</p>
-    <p>QR code</p>
+    <p>version 1.0.7.1.1 / 2023.07.03</p>
+    <p>QR code size</p>
 </body>
 
 </html>

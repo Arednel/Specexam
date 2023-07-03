@@ -234,7 +234,7 @@ Work：Ответственный секретарь приемной комис
 Company：КазНПУ имени Абая
 Phone：8 727 291 57 68';
 
-            $qr = QrCode::size(70)
+            $qr = QrCode::size(80)
                 ->encoding('UTF-8')
                 ->generate($string);
 
