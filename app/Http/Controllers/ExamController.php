@@ -229,7 +229,10 @@ class ExamController extends Controller
                 $pass = __('в том, что он(она) прошел(а) собеседование и <i>«не допущен»</i> для подачи документов на платное обучение по группе образовательных программ КазНПУ имени Абая.');
             }
             //QrCode generation
-            $string = __('https://www.kaznpu.kz/ru/2404/page/');
+            $string = 'Name：Даража Исабаева
+Work：Ответственный секретарь приемной комиссии
+Company：КазНПУ имени Абая
+Phone：8 727 291 57 68';
 
             $qr = QrCode::size(70)
                 ->encoding('UTF-8')
