@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 1.0.6.5.1 / 2023.07.03</p>
-    <p>Register View</p>
+    <p>version 1.0.6.6 / 2023.07.03</p>
+    <p>Result View</p>
 </body>
 
 </html>

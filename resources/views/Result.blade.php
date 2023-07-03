@@ -25,27 +25,34 @@
      }
 
      .div-main-text {
-         margin-bottom: 120px;
+         position: relative;
+         width: 105%;
+         right: 25px;
+         margin-bottom: 60px;
      }
-
 
      .column-one {
          width: 50%;
          position: relative;
-         top: 35px;
      }
 
      .column-two {
          width: 30%;
          position: relative;
-         left: 270px;
-         bottom: 80px;
+         left: 340px;
+         bottom: 45px;
      }
 
      .column-three {
          position: relative;
+         width: 30%;
          left: 420px;
-         bottom: 112px;
+         bottom: 100px;
+         text-align: right;
+     }
+
+     body {
+         font-size: 16px;
      }
  </style>
 
@@ -55,11 +62,10 @@
          <img src="{{ public_path('img/logo.png') }}">
      </div>
      <div class='div-center'>
-         <b>{{ __('СЕРТИФИКАТ') }}</b>
+         <b>{{ __('Справка') }} №{{ $result_id }}</b>
      </div>
-
      <div class='div-center'>
-         №{{ $result_id }}
+         <b> {{ __('о прохождении претендентом собеседования') }}</b>
      </div>
 
      <div class='div-right'>
@@ -67,10 +73,8 @@
      </div>
 
      <div class='div-main-text'>
-         &nbsp;&nbsp;&nbsp;&nbsp; {!! __(
-             'дан <i>full_name</i> в том, что он(а) в составе абитуриентов КазНПУ им.Абая сдал(а) специальный экзамен и получил(а)',
-             ['full_name' => $full_name],
-         ) !!}
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {!! __('Выдана <i>full_name</i>', ['full_name' => $full_name]) !!}
+         <br><br>
          {!! $pass !!}
      </div>
 
@@ -86,7 +90,7 @@
          </div>
 
          <div class="column-three">
-             <b>Д. Исабаева</b>
+             <b>Исабаева Д.Н.</b>
          </div>
      </div>
  </body>
