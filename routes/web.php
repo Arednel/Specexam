@@ -51,6 +51,7 @@ Route::get('/PDFResult/{result_id}/{user_id}', [ExamController::class, 'PDFResul
 
 //Excel export
 Route::get('/ExcelExport', [ResultController::class, 'excelExport'])->can('admin');
+Route::view('/Results', 'Results')->can('admin');
 
 //Change language
 Route::get('/Language/{locale}', function (string $locale) {

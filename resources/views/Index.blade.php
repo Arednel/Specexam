@@ -30,6 +30,7 @@
 
             @can('admin')
                 <button class="header__excel show" onclick="location.href='/ExcelExport'">{{ __('СКАЧАТЬ EXCEL') }}</button>
+                <button class="header__excel show" onclick="location.href='/Results'">Перейти к результатам</button>
             @endcan
         </div>
 
