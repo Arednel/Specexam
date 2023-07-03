@@ -28,7 +28,7 @@
             <h1 class="form__title">{{ __('Добро пожаловать!') }} 👋</h1>
 
             <div class="form-item">
-                <label class="form-item__title">{{ __('Полное имя') }}</label>
+                <label class="form-item__title">{{ __('ФИО') }}</label>
                 <div class="form-item__input">
                     <input type="text" placeholder="{{ __('ФИО') }}" value="{{ old('full_name') }}"
                         name="full_name" autocomplete="name" required>
