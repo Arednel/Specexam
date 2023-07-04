@@ -17,10 +17,6 @@
     <title>Specexam</title>
 </head>
 
-<style>
-    .globe {}
-</style>
-
 <body>
     <header class="container">
         <div class="header__left">
@@ -29,8 +25,8 @@
             </div>
 
             @can('admin')
-                <button class="header__excel show" onclick="location.href='/ExcelExport'">{{ __('СКАЧАТЬ EXCEL') }}</button>
-                <button class="header__excel show" onclick="location.href='/Results'">Перейти к результатам</button>
+                <button class="header__excel" onclick="location.href='/ExcelExport'">{{ __('СКАЧАТЬ EXCEL') }}</button>
+                <button class="header__excel" onclick="location.href='/Results'">Перейти к результатам</button>
             @endcan
         </div>
 
@@ -84,8 +80,11 @@
                             @case('exam completed')
                                 <p class="popup__text">
                                     {{ __('Вы уже прошли собеседование и получили «допуск» для поступления на педагогические специальности.') }}
-                                    <br>
-                                    <a href="{{ session('PDF_link') }}">{{ __('Перейти к сертификату') }}</a>
+                                    <br><br>
+                                    <button class="blue-btn go-to-sertificate"
+                                        onclick="location.href='{{ session('PDF_link') }}'">
+                                        {{ __('Перейти к сертификату') }}
+                                    </button>
                                 </p>
                                 <p class="popup__time">&nbsp;</p>
                             @break
