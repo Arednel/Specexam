@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <livewire:styles />
+    @livewireStyles
 
     <script src="//unpkg.com/alpinejs" defer></script>
 
@@ -40,11 +40,11 @@
 
 <body>
 
-    <livewire:results-table theme="bootstrap-5" />
+    @livewire('results-table', ['theme' => 'bootstrap-5'])
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
 
-    <livewire:scripts />
+    @livewireScripts
 
     <script src="https://unpkg.com/@nextapps-be/livewire-sortablejs@0.1.1/dist/livewire-sortable.js"></script>
 </body>
