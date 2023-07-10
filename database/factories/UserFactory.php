@@ -35,7 +35,6 @@ class UserFactory extends Factory
             'password' => $passwordHash,
             'full_name' => 'none',
             'iin' => '12345',
-            'ict' => '12345',
             'speciality' => 'speciality',
             'educational_institution' => 'school',
             'privilege' => 'Admin',
