@@ -34,7 +34,6 @@ class userController extends Controller
                 'password' => 'required',
                 'full_name' => 'required',
                 'iin' => 'required',
-                'ict' => 'required',
                 'speciality' => 'required',
                 'educational_institution' => 'required',
                 'locale' => 'required',
@@ -45,7 +44,6 @@ class userController extends Controller
         $password = Hash::make($request->input('password'));
         $full_name = $request->input('full_name');
         $iin = $request->input('iin');
-        $ict = $request->input('ict');
         $speciality = $request->input('speciality');
         $educational_institution = $request->input('educational_institution');
 
@@ -77,7 +75,6 @@ class userController extends Controller
             'password' => $password,
             'full_name' => $full_name,
             'iin' => $iin,
-            'ict' => $ict,
             'speciality' => $speciality,
             'educational_institution' => $educational_institution,
         ]);

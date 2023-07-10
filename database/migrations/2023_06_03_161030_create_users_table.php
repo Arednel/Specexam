@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('password', 200);
             $table->string('full_name', 500);
             $table->string('iin', 200);
-            $table->string('ict', 200);
             $table->string('speciality', 500);
             $table->string('educational_institution', 200);
             $table->string('privilege', 50);

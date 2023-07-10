@@ -58,10 +58,6 @@ class ResultsTable extends DataTableComponent
                 ->sortable()
                 ->searchable()
                 ->secondaryHeaderFilter('iin'),
-            Column::make('ИКТ', 'user.ict')
-                ->sortable()
-                ->searchable()
-                ->secondaryHeaderFilter('ict'),
             Column::make('Специальность', 'user.speciality')
                 ->sortable()
                 ->searchable()
@@ -119,13 +115,6 @@ class ResultsTable extends DataTableComponent
                 ])
                 ->filter(function (Builder $builder, string $value) {
                     $builder->where('iin', 'like', '%' . $value . '%');
-                }),
-            TextFilter::make('ict')
-                ->config([
-                    'placeholder' => 'ИКТ',
-                ])
-                ->filter(function (Builder $builder, string $value) {
-                    $builder->where('ict', 'like', '%' . $value . '%');
                 }),
             TextFilter::make('speciality')
                 ->config([

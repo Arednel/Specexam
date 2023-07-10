@@ -26,7 +26,7 @@ class ResultController extends Controller
         $current_row = 0;
 
         foreach ($results as $result) {
-            $user = User::find($result->user_id, ['last_try', 'email', 'full_name', 'iin', 'ict', 'speciality', 'educational_institution']);
+            $user = User::find($result->user_id, ['last_try', 'email', 'full_name', 'iin', 'speciality', 'educational_institution']);
 
             array_push($sheet, [
                 $user->last_try,
@@ -35,7 +35,6 @@ class ResultController extends Controller
                 $result->score . ' / ' . $questions_amount,
                 $user->full_name,
                 $user->iin,
-                $user->ict,
                 $user->speciality,
                 $user->educational_institution,
             ]);

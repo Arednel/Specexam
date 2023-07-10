@@ -76,7 +76,7 @@
 
 
             <div class="form-item">
-                <label class="form-item__title">{{ __('ИИН') }}</label>
+                <label class="form-item__title">{{ __('ИИН / номер паспорта иностранного гражданина') }}</label>
                 <div class="form-item__input">
                     <input type="number" value="{{ old('iin') }}" name="iin" required>
                     <span class="focus-input-1"></span>
@@ -84,23 +84,6 @@
                 </div>
 
                 @error('iin')
-                    <div class="form-item__error show">
-                        <p>{{ $message }}</p>
-                    </div>
-                @else
-                    <div class="form-item__error"></div>
-                @enderror
-            </div>
-
-            <div class="form-item">
-                <label class="form-item__title">{{ __('ИКТ') }}</label>
-                <div class="form-item__input">
-                    <input type="number" value="{{ old('ict') }}" name="ict" required>
-                    <span class="focus-input-1"></span>
-                    <span class="focus-input-2"></span>
-                </div>
-
-                @error('ict')
                     <div class="form-item__error show">
                         <p>{{ $message }}</p>
                     </div>

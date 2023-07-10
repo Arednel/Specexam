@@ -23,7 +23,6 @@ class User extends Authenticatable
         'password',
         'full_name',
         'iin',
-        'ict',
         'speciality',
         'educational_institution',
         'exam_start',
