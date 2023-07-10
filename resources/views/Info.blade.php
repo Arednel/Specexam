@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 1.0.7.3.2 / 2023.07.10</p>
-    <p>Fix 2</p>
+    <p>version 1.0.7.3.3 / 2023.07.10</p>
+    <p>Translation fix</p>
 </body>
 
 </html>
