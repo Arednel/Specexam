@@ -3,13 +3,16 @@
 namespace App\Http\Livewire;
 
 use Illuminate\Support\Facades\URL;
+
 use Illuminate\Database\Eloquent\Builder;
 
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Columns\LinkColumn;
+
 use Rappasoft\LaravelLivewireTables\Views\Filters\DateFilter;
 use Rappasoft\LaravelLivewireTables\Views\Filters\TextFilter;
+use Rappasoft\LaravelLivewireTables\Views\Filters\NumberFilter;
 
 use App\Models\Result;
 
@@ -84,12 +87,13 @@ class ResultsTable extends DataTableComponent
                 ->filter(function (Builder $builder, string $value) {
                     $builder->where('results.id', 'like', '%' . $value . '%');
                 }),
-            TextFilter::make('score')
+            NumberFilter::make('score')
                 ->config([
-                    'placeholder' => 'Баллов',
+                    'min' => 0,
+                    'max' => 40,
                 ])
                 ->filter(function (Builder $builder, string $value) {
-                    $builder->where('score', 'like', '%' . $value . '%');
+                    $builder->where('score', 'like', $value);
                 }),
             DateFilter::make('created_at')
                 ->filter(function (Builder $builder, string $value) {
