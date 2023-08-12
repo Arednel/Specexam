@@ -40,8 +40,8 @@
     <br>
     <a href="/">← На главную</a>
 
-    <p>version 1.0.7.4 / 2023.07.27</p>
-    <p>Filter</p>
+    <p>version 1.0.8 / 2023.08.12</p>
+    <p>Ability to start or stop test, registration</p>
 </body>
 
 </html>

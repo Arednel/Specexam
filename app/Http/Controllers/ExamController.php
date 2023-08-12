@@ -6,6 +6,7 @@ use App\Models\User;
 
 use App\Models\Result;
 use App\Models\Question;
+use App\Models\Settings;
 
 use Illuminate\Http\Request;
 
@@ -69,6 +70,11 @@ class ExamController extends Controller
             }
         }
         //Continue normally
+
+        //Check in site setting if user can start test
+        if (!Settings::first()->can_start_test) {
+            return redirect('/')->with('error', 'cant start test');
+        }
 
         $questions = Question::all();
 

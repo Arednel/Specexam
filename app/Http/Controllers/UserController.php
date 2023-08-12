@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-
+use App\Models\Settings;
 use App\Models\Specialities;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Hash;
-
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 
@@ -18,6 +18,10 @@ class userController extends Controller
 {
     public function registerView(Request $request)
     {
+        if (!Settings::first()->can_register) {
+            return redirect('/')->with('error', 'cant register');
+        }
+
         //Get current locale
         $locale = app()->getLocale();
         //Depending on current locale, choose diffirent text        
@@ -25,6 +29,7 @@ class userController extends Controller
 
         return view('Register', ['specialities' => $specialities, 'locale' => $locale]);
     }
+
     public function register(Request $request)
     {
         //Validate user data

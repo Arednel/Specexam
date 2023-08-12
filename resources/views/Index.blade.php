@@ -72,9 +72,11 @@
             <div class="popup-bg show" onclick="togglePopup()">
                 <div class="popup">
                     <div class="popup__wrapper">
-                        <h2 class="popup__title">
-                            {{ auth()->user()->full_name }}
-                        </h2>
+                        @if (in_array(session('error'), ['exam completed', 'try later', 'exam failed']))
+                            <h2 class="popup__title">
+                                {{ auth()->user()->full_name }}
+                            </h2>
+                        @endif
                         {{-- Error text --}}
                         @switch(session('error'))
                             @case('exam completed')
@@ -102,6 +104,20 @@
                                 </p>
                                 <p class="popup__time">&nbsp;</p>
                             @break
+
+                            @case('cant register')
+                                <p class="popup__text">
+                                    {{ __('Регистрация недоступна') }}
+                                </p>
+                                <p class="popup__time">&nbsp;</p>
+                            @break
+
+                            @case('cant start test')
+                                <p class="popup__text">
+                                    {{ __('Прохождения теста недоступно') }}
+                                </p>
+                                <p class="popup__time">&nbsp;</p>
+                            @break
                         @endswitch
 
                     </div>
@@ -121,7 +137,7 @@
                 </p>
 
                 @if (auth()->user())
-                    @if (session()->has('error'))
+                    @if (session()->has('error') && in_array(session('error'), ['exam completed', 'try later', 'exam failed']))
                         <button class="blue-btn intro__btn" onclick="location.href='{{ session('PDF_link') }}'">
                             {{ __('ПЕРЕЙТИ К СЕРТИФИКАТУ') }}
                         </button>
